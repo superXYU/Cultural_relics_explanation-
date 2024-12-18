@@ -1,0 +1,22 @@
+清明上河图:
+  heighlights:
+  - 北宋张择端
+  - 汴京繁华景象
+  - 社会生活资料
+  - 画风细腻
+  - 画面丰富
+  - 详实反映风俗
+  id: 2
+  images: product_info/images/QMSHT.jpg
+  instruction: product_info/instructions/QMSHT.md
+司母戊鼎:
+  heighlights:
+  - 商代晚期
+  - 重832.84千克
+  - 世界最重青铜礼器
+  - 造型雄伟
+  - 装饰华丽
+  - 反映高超铸造技术
+  id: 1
+  images: product_info/images/SMWD.jpg
+  instruction: product_info/instructions/SMWD.md
