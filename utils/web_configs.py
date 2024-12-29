@@ -12,14 +12,17 @@ class WebConfigs:
     #                             LLM 模型配置
     # ==================================================================
     if os.getenv("USING_4BIT") == "true":
-        LLM_MODEL_NAME: str = "HinGwenWoong/streamer-sales-lelemiao-7b-4bit"
+        LLM_MODEL_NAME: str = "/root/copy/weights/mlks_weights/HinGwenWoong/mlks_ww_helper"
     else:
-        LLM_MODEL_NAME: str = "HinGwenWoong/streamer-sales-lelemiao-7b"
-
+        LLM_MODEL_NAME: str = "/root/copy/weights/mlks_weights/HinGwenWoong/mlks_ww_helper"
+    # if os.getenv("USING_4BIT") == "true":
+    #     LLM_MODEL_NAME: str = "HinGwenWoong/streamer-sales-lelemiao-7b-4bit"
+    # else:
+    #     LLM_MODEL_NAME: str = "HinGwenWoong/streamer-sales-lelemiao-7b"
+# /root/copy/weights/llm_weights/HinGwenWoong/mlks_ww_helper
     SALES_NAME: str = "摩拉克斯"  # 启动的角色名
 
-    LLM_MODEL_DIR: str = r"./weights/llm_weights/"
-
+    LLM_MODEL_DIR: str = r"./weights/mlks_weights/"
     # ==================================================================
     #                               组件配置
     # ==================================================================

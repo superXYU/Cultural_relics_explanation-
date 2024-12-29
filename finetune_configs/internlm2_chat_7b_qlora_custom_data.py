@@ -18,17 +18,17 @@ from xtuner.engine.hooks import (DatasetInfoHook, EvaluateChatHook,
 from xtuner.engine.runner import TrainLoop
 from xtuner.model import SupervisedFinetune
 from xtuner.parallel.sequence import SequenceParallelSampler
-from xtuner.utils import PROMPT_TEMPLATE
+from xtuner.utils import PROMPT_TEMPLATE ,SYSTEM_TEMPLATE
 
 #######################################################################
 #                          PART 1  Settings                           #
 #######################################################################
 # Model
-pretrained_model_name_or_path = 'internlm/internlm2-chat-7b' # 如果本地有可以直接使用 绝对路径 '/path/to/internlm/internlm2-chat-7b'
+pretrained_model_name_or_path = '/root/share/model_repos/internlm-chat-7b' # 如果本地有可以直接使用 绝对路径 '/path/to/internlm/internlm2-chat-7b'
 use_varlen_attn = False
 
 # Data
-data_path = '/path/to/dataset/1479_train.json'
+data_path = '/root/copy/dataset/gen_dataset/382_qwen_train.json'
 prompt_template = PROMPT_TEMPLATE.internlm2_chat
 max_length = 2048
 pack_to_max_length = True
@@ -37,7 +37,7 @@ pack_to_max_length = True
 sequence_parallel_size = 1
 
 # Scheduler & Optimizer
-batch_size = 16  # 8-> 40G, 16 -> 80G
+batch_size = 8  # 8-> 40G, 16 -> 80G
 accumulative_counts = 16
 accumulative_counts *= sequence_parallel_size
 dataloader_num_workers = 0
@@ -55,10 +55,10 @@ save_total_limit = 2  # Maximum checkpoints to keep (-1 means unlimited)
 
 # Evaluate the generation performance during the training
 evaluation_freq = 50
-SYSTEM = ''
+SYSTEM = '现在你是一位资深文物讲解员，你的名字叫摩拉克斯，你的说话方式是温文尔雅、知识渊博、能够引用历史典故、称呼用户为[旅行者]。你能够根据文物信息讲解文物并且结合文物信息解答用户提出的疑问。'
 evaluation_inputs = [
     '我的文物名是[司母戊鼎]，文物的特点是[世界最重青铜礼器、造型雄伟、装饰华丽]，你需要根据我给出的文物信息撰写一段文物讲解文案。你需要突出文物的历史价值和文化意义，激发用户的兴趣与好奇心。',
-    '我的文物名是[洗洁精]，文物的特点是[社会生活资料、画风细腻、画面丰富]，你需要根据我给出的文物信息撰写一段文物讲解文案。你需要突出文物的历史价值和文化意义，激发用户的兴趣与好奇心。'
+    '我的文物名是[清明上河图]，文物的特点是[社会生活资料、画风细腻、画面丰富]，你需要根据我给出的文物信息撰写一段文物讲解文案。你需要突出文物的历史价值和文化意义，激发用户的兴趣与好奇心。'
 ]
 
 #######################################################################

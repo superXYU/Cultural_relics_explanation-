@@ -53,7 +53,7 @@ instruction_generation_setting:
 
 # 角色及其性格
 role_type:
-  乐乐喵:   # 知识渊博型
+  摩拉克斯:   # 知识渊博型
     - 温文尔雅
     - 知识渊博
     - 能够引用历史典故
