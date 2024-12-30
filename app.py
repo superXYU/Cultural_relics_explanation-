@@ -21,6 +21,11 @@ st.set_page_config(
     page_icon="root/copy/pages/logo.jpg",
     layout="wide",
     initial_sidebar_state="expanded",
+    menu_items={
+        "Get Help": "https://github.com/superXYU/Cultural_relics_explanation-",
+        "Report a bug": "https://github.com/superXYU/Cultural_relics_explanation-",
+        "About": "# 文物小助手",
+    },
 )
 
 from utils.rag.rag_worker import gen_rag_db
